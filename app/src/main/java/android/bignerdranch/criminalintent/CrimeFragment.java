@@ -30,6 +30,7 @@ public class CrimeFragment extends Fragment {
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
+    private Button mDeleteButton;
     private CheckBox mSolvedCheckBox;
 
     public static CrimeFragment newInstance(UUID crimeId) {
@@ -85,6 +86,15 @@ public class CrimeFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView,
                                          boolean isChecked) {
                 mCrime.setSolved(isChecked);
+            }
+        });
+
+        mDeleteButton = v.findViewById(R.id.delete_crime);
+        mDeleteButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                CrimeLab.get(getActivity()).deleteCrime(mCrime);
+                getActivity().finish();
             }
         });
 
