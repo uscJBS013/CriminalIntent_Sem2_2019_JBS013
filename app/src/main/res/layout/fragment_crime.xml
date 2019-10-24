@@ -4,6 +4,18 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:orientation="vertical">
+    <ImageView
+        android:id="@+id/crime_photo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerInside"
+        android:cropToPadding="true"
+        android:background="@android:color/darker_gray"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/crime_camera"
+        android:src="@android:drawable/ic_menu_camera"/>
     <TextView
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
